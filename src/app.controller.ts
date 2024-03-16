@@ -39,7 +39,7 @@ export class AppController {
         throw new ForbiddenException('Order name not match');
       }
 
-      if (paymentResponse.data.amount.total != paymentDto.order.amount) {
+      if (paymentResponse.data.amount.total != paymentDto.order.totalAmount) {
         throw new ForbiddenException('Currency not match');
       }
 

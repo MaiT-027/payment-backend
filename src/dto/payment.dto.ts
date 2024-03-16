@@ -1,9 +1,10 @@
+import { IsNotEmpty, IsNotEmptyObject, IsString } from 'class-validator';
+import OrderDTO from './order.dto';
+
 export default class PaymentDTO {
+  @IsString()
+  @IsNotEmpty()
   paymentId: string;
-  order: {
-    orderName: string;
-    currency: string;
-    payMethod: string;
-    amount: number;
-  };
+  @IsNotEmptyObject()
+  order: OrderDTO;
 }
